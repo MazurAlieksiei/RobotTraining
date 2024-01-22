@@ -21,6 +21,7 @@ ${fourth_column_value_pattern}    (//tbody//following-sibling::tr)[number]/td[4]
     Click Element    (//input[@aria-label="Google Search"])[2]
     Page Should Not Contain Element     //*[@title="Search"]
     Click Element    (//h3[text()="Азбука Морзе"]/following::div)[1]
+    Page Should Contain Element    //table[contains(@class, "wikitable")]
 
 #    &{dict}    Create Dictionary
 #    FOR    ${i}    IN RANGE    1    33
