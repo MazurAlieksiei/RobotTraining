@@ -39,8 +39,8 @@ ${fourth_column_value_pattern}    (//tbody//following-sibling::tr)[number]/td[4]
 #    END
 #    Log Dictionary    ${dict}
 #
-#    @{key}    Get Dictionary Keys    ${dict}    sort_keys=Flase
-#    @{value}    Get Dictionary Values    ${dict}    sort_keys=Flase
+#    @{key}    Get Dictionary Keys    ${dict}    sort_keys=False
+#    @{value}    Get Dictionary Values    ${dict}    sort_keys=False
 #    FOR    ${i}    ${j}    IN ENUMERATE   @{key}
 #        Log To Console    Напев для буквы "${key}[${i}]" : "${value}[${i}]"
 #    END
@@ -61,6 +61,6 @@ ${fourth_column_value_pattern}    (//tbody//following-sibling::tr)[number]/td[4]
 #         Set To Dictionary    ${dict}    ${letters}[${i}]=${songs}[${i}]
 #    END
 #    Log Dictionary    ${dict}
-#    [Teardown]    Close Browser
+   [Teardown]    Close Browser
 
 *** Keywords ***
