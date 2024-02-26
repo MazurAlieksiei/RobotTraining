@@ -1,10 +1,11 @@
 *** Settings ***
-Library    BuiltIn
-Library    OperatingSystem
-Library    Collections
-Library    String
-Library    SeleniumLibrary
-Library    RequestsLibrary
+Library        BuiltIn
+Library        OperatingSystem
+Library        Collections
+Library        String
+Library        SeleniumLibrary
+Library        RequestsLibrary
+Resource       GlobalVariables.robot
 
 *** Keywords ***
 gk.Open Browser
@@ -24,10 +25,10 @@ gk.Find Broken Images With GET
         IF    ${status}==False
              ${attribute}    Get Element Attribute    ${i}    outerHTML
              Log    ${attribute} is broken.
-             ${BROKEN_IMAGES}    Evaluate    ${BROKEN_IMAGES} + 1
+             ${broken_images}    Evaluate    ${BROKEN_IMAGES} + 1
         END
     END
-    Return From Keyword    ${BROKEN_IMAGES}
+    Return From Keyword    ${broken_images}
 
 gk.Find Broken Images By Attribute
     [Documentation]
@@ -40,7 +41,7 @@ gk.Find Broken Images By Attribute
         IF    ${status}==False
              ${attribute2}    Get Element Attribute    ${i}    outerHTML
              Log    ${attribute2} is broken.
-             ${broken_images}    Evaluate    ${broken_images} + 1
+             ${broken_images}    Evaluate    ${BROKEN_IMAGES} + 1
         END
     END
     Return From Keyword    ${broken_images}
